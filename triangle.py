@@ -8,7 +8,7 @@
 # return 0: khong la tam giac.
 import math
 e=10**-9
-maximum=10**12
+maximum=2**32-1
 # check_vuong function.
 def check_binhphuong(a,b,c):
         c12=math.pow(a,2);
