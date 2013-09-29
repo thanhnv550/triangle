@@ -12,9 +12,9 @@ e=2**-32
 maximum=2**31-1
 # check_vuong function.
 def check_binhphuong(a,b,c):
-        c12=math.pow(a,2);
-	c22=math.pow(b,2);
-	c32=math.pow(c,2);
+        c12=decimal.Decimal(math.pow(a,2));
+	c22=decimal.Decimal(math.pow(b,2));
+	c32=decimal.Decimal(math.pow(c,2));
 
         if (math.fabs(c12+c22-c32)<=e) or (math.fabs(c22+c32-c12)<=e) or (math.fabs(c32+c12-c22)<=e):
                 return True

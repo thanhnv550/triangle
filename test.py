@@ -2,7 +2,7 @@ import unittest
 import math
 maximum=2**31-1
 from triangle import detect_triangle
-class SimpleWidgetTestCase(unittest.TestCase):
+class Test(unittest.TestCase):
         def setUp(self):
             pass
  
@@ -24,13 +24,16 @@ class SimpleWidgetTestCase(unittest.TestCase):
         
         def test_gioihan_input1(self):    
             self.assertEqual(detect_triangle(-1,7,8), -2)
+        def test_gioihan_input1_1(self): 
             self.assertEqual(detect_triangle('-1',7,8), -2)
             
         def test_gioihan_input2(self):
             self.assertEqual(detect_triangle(7,-7,8), -2)
+        def test_gioihan_input2_2(self):
             self.assertEqual(detect_triangle(7,'-7',8), -2)
         def test_gioihan_input3(self):
             self.assertEqual(detect_triangle(7,9,-7), -2)
+        def test_gioihan_input3_3(self):
             self.assertEqual(detect_triangle(7,9,'-7'), -2)
             
         
@@ -64,6 +67,7 @@ class SimpleWidgetTestCase(unittest.TestCase):
             
         def test_tamgiacvuong1(self):
             self.assertEqual(detect_triangle(3,5,4), 4)
+        def test_tamgiacvuong1_1(self):
             self.assertAlmostEqual(detect_triangle(math.sqrt(89),5,8), 4)
         def test_tamgiacvuong2(self):
             self.assertEqual(detect_triangle(4,3,5), 4)
@@ -75,7 +79,10 @@ class SimpleWidgetTestCase(unittest.TestCase):
             
         def test_tamgiaccan1(self):
             self.assertEqual(detect_triangle(5.6,5.6,3), 3)
-            self.assertEqual(detect_triangle(2**26,2, 2**26) , 3)
+        def test_tamgiaccan1_2(self):
+            self.assertEqual(detect_triangle(maximum,2, maximum) , 3)
+        def test_tamgiaccan1_1(self):
+            self.assertEqual(detect_triangle(2**26,2**-10, 2**26) , 3)
         def test_tamgiaccan2(self):
             self.assertEqual(detect_triangle(5.6,3,5.6), 3)
         def test_tamgiaccan3(self):
@@ -101,15 +108,17 @@ class SimpleWidgetTestCase(unittest.TestCase):
             self.assertEqual(detect_triangle('1','0','1'), 0)
         def test_khonglatamgiac4(self):
             self.assertEqual(detect_triangle(1,1,0), 0)
+        def test_khonglatamgiac5(self):
             self.assertEqual(detect_triangle('1','1','0'), 0)
             
         def test_tamgiacthuong1(self):
             self.assertEqual(detect_triangle(3,4,6), 5)
-            self.assertEqual(detect_triangle('6','7','8'), 5)
         def test_tamgiacthuong2(self):
             self.assertEqual(detect_triangle(6*math.pow(2,-15), 4*math.pow(2,-15), 7*math.pow(2,-15)), 5)
         def test_tamgiacthuong3(self):
             self.assertEqual(detect_triangle(maximum,maximum-1,maximum-2), 5)
+        def test_tamgiacthuong4(self):
+            self.assertEqual(detect_triangle('6','7','8'), 5)
         
             
              
