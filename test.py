@@ -40,7 +40,12 @@ class SimpleWidgetTestCase(unittest.TestCase):
             self.assertEqual(detect_triangle(7,maximum+1,9), -2)
         def test_gioihan_input6(self):    
             self.assertEqual(detect_triangle(7,9,maximum+1), -2)
-                             
+        def test_gioihan_input7(self):    
+            self.assertEqual(detect_triangle(-math.pow(2,-31),9,maximum), -2)
+        def test_gioihan_input8(self):    
+            self.assertEqual(detect_triangle(9,-math.pow(2,-31),maximum), -2)
+        def test_gioihan_input9(self):    
+            self.assertEqual(detect_triangle(9,maximum,-math.pow(2,-31)), -2)
             
         def test_tamgiacdeu1(self):
             self.assertEqual(detect_triangle(1,1,1), 1)

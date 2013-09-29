@@ -35,7 +35,7 @@ def detect_triangle(a,b,c):
                 c3=float(c)
         except ValueError:
                 return -1
-        if(c1<0 or c2<0 or c3<0 or c1>maximum or c2>maximum or c3>maximum):
+        if(decimal.Decimal(c1)<0 or decimal.Decimal(c2)<0 or decimal.Decimal(c3)<0 or c1>maximum or c2>maximum or c3>maximum):
                 return -2
         if check_tamgiac(c1,c2,c3)==True:
                 if (c1==c2 or c2==c3 or c3==c1) and check_binhphuong(c1,c2,c3):
